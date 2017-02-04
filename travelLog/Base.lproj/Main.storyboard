@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="tFB-AX-0ho">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Travel Log Table View Controller-->
+        <scene sceneID="qXH-2N-oW3">
+            <objects>
+                <tableViewController id="ciu-WW-ef3" customClass="TravelLogTableViewController" customModule="travelLog" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ale-0u-AZF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="SFO-ot-2N1">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="travelCell" id="f2Z-HF-UJ3">
+                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="f2Z-HF-UJ3" id="eKp-FG-i5v">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="y9r-g0-XdZ" kind="show" id="sYT-DW-i4s"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ciu-WW-ef3" id="rJm-CJ-mId"/>
+                            <outlet property="delegate" destination="ciu-WW-ef3" id="4TY-IC-Uxy"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="cCZ-zb-ek5">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="9B4-oB-9Pq">
+                            <connections>
+                                <segue destination="y9r-g0-XdZ" kind="show" id="oug-YK-dhX"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZtQ-tn-z6P" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1000.8" y="1.3493253373313345"/>
+        </scene>
+        <!--Title-->
+        <scene sceneID="c0e-eE-poq">
+            <objects>
+                <viewController id="y9r-g0-XdZ" customClass="DetailLogViewController" customModule="travelLog" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VAf-Fy-hSA"/>
+                        <viewControllerLayoutGuide type="bottom" id="iPb-lb-VyJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LJA-C3-KDV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="This is your default log. Looks like you need to travel more!!!!!" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="bhE-RX-JLY">
+                                <rect key="frame" x="24" y="208" width="335" height="279"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="279" id="WeL-D6-zYL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NKX-SL-jTu">
+                                <rect key="frame" x="159" y="544" width="36" height="30"/>
+                                <state key="normal" title="Clear"/>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Travel to your log...." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e1h-Ey-joo">
+                                <rect key="frame" x="24" y="130" width="335" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="NKX-SL-jTu" firstAttribute="leading" secondItem="LJA-C3-KDV" secondAttribute="leading" constant="159" id="17e-B6-Yz7"/>
+                            <constraint firstItem="e1h-Ey-joo" firstAttribute="leading" secondItem="LJA-C3-KDV" secondAttribute="leadingMargin" constant="8" id="E6u-CN-CBv"/>
+                            <constraint firstItem="iPb-lb-VyJ" firstAttribute="top" secondItem="NKX-SL-jTu" secondAttribute="bottom" constant="93" id="EJ3-zE-RNu"/>
+                            <constraint firstItem="e1h-Ey-joo" firstAttribute="trailing" secondItem="bhE-RX-JLY" secondAttribute="trailing" id="KHK-sl-ieh"/>
+                            <constraint firstItem="e1h-Ey-joo" firstAttribute="top" secondItem="VAf-Fy-hSA" secondAttribute="bottom" constant="66" id="RcZ-oh-fAN"/>
+                            <constraint firstItem="bhE-RX-JLY" firstAttribute="top" secondItem="e1h-Ey-joo" secondAttribute="bottom" constant="48" id="jxf-Tu-cI7"/>
+                            <constraint firstItem="e1h-Ey-joo" firstAttribute="trailing" secondItem="LJA-C3-KDV" secondAttribute="trailingMargin" id="oqe-qb-8MT"/>
+                            <constraint firstItem="e1h-Ey-joo" firstAttribute="leading" secondItem="bhE-RX-JLY" secondAttribute="leading" id="rQe-vL-UDP"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="SMD-3j-wh2">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="ffI-wP-ssp"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cCE-2k-IF9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1737" y="0.0"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="9JO-0F-TQM">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tFB-AX-0ho" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="m6p-Wt-iS5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ciu-WW-ef3" kind="relationship" relationship="rootViewController" id="xrP-9D-a8h"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lyT-xF-Dng" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="284" y="0.0"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="sYT-DW-i4s"/>
+    </inferredMetricsTieBreakers>
+</document>
